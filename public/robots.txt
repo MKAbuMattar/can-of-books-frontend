@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
+/*    /index.html   200
 User-agent: *
 Disallow:
