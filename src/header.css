@@ -1,7 +1,16 @@
-a{
-  color:#fff;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-a:hover{
-  color:darkgrey;
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darkgrey;
+
+  text-decoration: none;
 }

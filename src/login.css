@@ -1,4 +1,22 @@
-.card{
-  margin: auto;
+.grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.card {
+  margin: 0 auto;
+  margin-top: 80%;
   text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.btn-primary {
+  border: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.btn:focus {
+  outline: 0;
 }
