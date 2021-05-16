@@ -8,7 +8,7 @@ class Footer extends React.Component {
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand>&copy; Best Books</Navbar.Brand>
       </Navbar>
-    )
+    );
   }
 }
 
