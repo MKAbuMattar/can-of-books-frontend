@@ -8,7 +8,7 @@ Mohammad Abu Mattar [GitHub](https://github.com/MKAbuMattar/)
 
 Mahmood Al-Ashqar [GitHub](https://github.com/mahmood-alashqar)
 
-**Version**: 1.0.5
+**Version**: 1.1.0
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ***
@@ -57,10 +57,16 @@ npm i --save @auth0/auth0-react
 npm i --save react-bootstrap bootstrap
 ```
 
-3. Eeact Router DOM / [npm link](https://www.npmjs.com/package/react-router-dom)
+3. React Router DOM / [npm link](https://www.npmjs.com/package/react-router-dom)
 
 ```bash
 npm i --save react-router-dom
+```
+
+4. Axios / [npm link](https://www.npmjs.com/package/axios)
+
+```bash
+npm i --save axios
 ```
 
 ## Change Log
@@ -68,7 +74,8 @@ npm i --save react-router-dom
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
-this app has a quick and fast connection to the auth0 for authorization and authentication, 4ms forget data, and your components for broke large component to simplify the code
+this app has a quick and fast connection to the auth0 for authorization and authentication, 4ms forget data, and your components for broke large component to simplify the code,
+after user log in success and  enter to the profile page , the best book to that user will be shown .
 
 
 ## Credit and Collaborations
@@ -79,6 +86,8 @@ Collaborations with Mahmood Al-Ashqar [GitHub](https://github.com/mahmood-alashq
 ***
 
 ## Time Estimates
+
+lab work 11
 
 Name of feature: login and logout using `Auth0`, if the user try to open any page not allow to open using URL it'll redirect to 404 page.
 
@@ -91,6 +100,23 @@ Finish time: 5:15 PM
 Actual time needed to complete: ~3h
 
 ***
+
+lab work 12
+
+Name of feature: login and logout using `Auth0`, if the user try to open any page not allow to open using URL it'll redirect to 404 page,
+i added a new component named 'BestBooks.js' and that one is responsable to display the favourite books that user select.
+
+
+Estimate of time needed to complete: 3h
+
+Start time: 3:00 PM
+
+Finish time: 6:30 PM
+
+Actual time needed to complete: ~3h
+
+***
+
 
 A link to the deployed version of your latest code.
 
@@ -110,4 +136,4 @@ nothing
 
 How long you spent working on this assignment.
 
-~3h
+~6h
