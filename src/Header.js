@@ -4,6 +4,7 @@ import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './header.css';
 import LogoutButton from './LogoutButton';
+import LoginButton from './LoginButton';
 import { withAuth0 } from '@auth0/auth0-react';
 
 class Header extends React.Component {
@@ -21,10 +22,16 @@ class Header extends React.Component {
           </>
         }
         {/* TODO: if the user is logged in, render the `LogoutButton` - if the user is logged out, render the `LoginButton` */}
-        {isAuthenticated &&
-          <>
-            <LogoutButton />
-          </>
+        {isAuthenticated ?
+          (
+            <>
+              <LogoutButton />
+            </>
+          ) : (
+            <>
+              <LoginButton />
+            </>
+          )
         }
       </Navbar>
     );
