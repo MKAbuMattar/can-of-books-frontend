@@ -25,22 +25,10 @@ class App extends React.Component {
           <IsLoadingAndError>
             <Header />
             <Switch>
-              <Route exact path="/">
-                {/* TODO: if the user is logged in, render the `MyFavoriteBooks` component, if they are not, render the `Login` component */}
-                {isAuthenticated ? (
-                  <>
-                    <MyFavoriteBooks />
-                  </>
-                ) : (
-                  <>
-                    <Login />
-                  </>
-                )}
-              </Route>
+              {/* TODO: if the user is logged in, render the `MyFavoriteBooks` component, if they are not, render the `Login` component */}
+              <Route exact path="/" component={isAuthenticated ? MyFavoriteBooks : Login} />
               {/* TODO: add a route with a path of '/profile' that renders a `Profile` component */}
-              <Route exact path="/profile">
-                <Profile />
-              </Route>
+              <Route exact path="/profile" component={Profile} />
               <Route path="/*" component={Page404} />
             </Switch>
             <Footer />
