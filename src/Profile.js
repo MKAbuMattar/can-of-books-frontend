@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withAuth0 } from '@auth0/auth0-react';
 import Page404 from './Page404';
-import BestBooks from './BestBooks';
+import { Card } from 'react-bootstrap';
 
 class Profile extends Component {
   constructor(props) {
@@ -19,8 +19,6 @@ class Profile extends Component {
     });
   }
 
-
-
   render() {
 
     const { user } = this.props.auth0;
@@ -35,11 +33,15 @@ class Profile extends Component {
             {(user !== undefined) ?
               (
                 <>
-
-                  <div>Hello {user.name}</div>
-                  <div>Your Email: {user.email}</div>
-                  <BestBooks />
-
+                  <div className="grid">
+                    <Card>
+                      <Card.Img src={user.picture} alt={`your image ${user.name}`} title={user.name} />
+                      <Card.Body>
+                        <Card.Title>Hello {user.name}</Card.Title>
+                        <Card.Text>Your Email: {user.email}</Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </div>
                 </>
               ) : (
                 <>
@@ -47,8 +49,6 @@ class Profile extends Component {
                 </>
               )}
           </>)}
-
-
       </>);
   }
 }
