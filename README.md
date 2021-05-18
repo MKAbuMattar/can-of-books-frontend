@@ -8,7 +8,7 @@ Mohammad Abu Mattar [GitHub](https://github.com/MKAbuMattar/)
 
 Mahmood Al-Ashqar [GitHub](https://github.com/mahmood-alashqar)
 
-**Version**: 1.1.0
+**Version**: 1.2.0
 <!-- (increment the patch/fix version number if you make more commits past your first submission) -->
 
 ***
@@ -77,7 +77,6 @@ npm i --save axios
 this app has a quick and fast connection to the auth0 for authorization and authentication, 4ms forget data, and your components for broke large component to simplify the code,
 after user log in success and  enter to the profile page , the best book to that user will be shown .
 
-
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 
@@ -117,10 +116,29 @@ Actual time needed to complete: ~3h
 
 ***
 
+***
+
+lab work 13
+
+Name of feature: login and logout using `Auth0`, if the user try to open any page not allow to open using URL it'll redirect to 404 page,
+i added a new component named 'BestBooks.js' and that one is responsable to display the favourite books that user select.
+new you can add/delete new books
+
+
+Estimate of time needed to complete: 1:30h
+
+Start time: 3:45 PM
+
+Finish time: 5:30 PM
+
+Actual time needed to complete: ~1:45h
+
+***
+
 
 A link to the deployed version of your latest code.
 
-https://can-of-books-frontend.netlify.app/
+https://can-of-books.netlify.app/
 
 A link to your public Trello board.
 
@@ -136,4 +154,4 @@ nothing
 
 How long you spent working on this assignment.
 
-~6h
+~7:45h
