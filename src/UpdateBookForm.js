@@ -65,7 +65,7 @@ class UpdateBookForm extends Component {
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="secondary" onClick={this.props.handleClose}>Close</Button>
-                <Button variant="primary" onClick={this.props.addbook}>Update Book</Button>
+                <Button variant="primary" onClick={this.props.updateBook}>Update Book</Button>
               </Modal.Footer>
             </Modal>
           </>

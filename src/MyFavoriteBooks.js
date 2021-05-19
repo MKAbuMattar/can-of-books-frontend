@@ -3,9 +3,9 @@ import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import BestBooks from './BestBooks';
 import BookFormModal from './BookFormModal';
-import UpdateBookForm from './UpdateBookForm';
 import { Jumbotron, Button } from 'react-bootstrap';
 import './myFavoriteBooks.css';
+import UpdateBookForm from './UpdateBookForm';
 
 class MyFavoriteBooks extends React.Component {
 
@@ -97,18 +97,18 @@ class MyFavoriteBooks extends React.Component {
 
     this.setState({
       index: idx,
-      name: newBookArr[0].bookName,
-      description: newBookArr[0].bookDescription,
-      status: newBookArr[0].bookStatus,
+      bookName: newBookArr[0].bookName,
+      bookDescription: newBookArr[0].bookDescription,
+      bookStatus: newBookArr[0].bookStatus,
       showUpdateForm: true,
     });
   }
   updateBook = async (e) => {
     e.preventDefault();
     const reqBody = {
-      name: this.state.bookName,
-      description: this.state.bookDescription,
-      status: this.state.bookStatus
+      bookName: this.state.bookName,
+      bookDescription: this.state.bookDescription,
+      bookStatus: this.state.bookStatus
     };
     const book = await axios.put(`${this.state.server}/books/${this.state.index}`, reqBody);
 
@@ -128,45 +128,39 @@ class MyFavoriteBooks extends React.Component {
             <Jumbotron>
               <h1>My Favorite Books</h1>
               <p>This is a collection of my favorite books</p>
-              <Button
-                variant="primary"
-                onClick={this.handleShow}
-              >Add Book</Button>
+              <>
+                <Button
+                  variant="primary"
+                  onClick={this.handleShow}
+                >Add Book</Button>
 
-
-
-              <BookFormModal
-                show={this.state.show}
-                handleClose={this.handleClose}
-                updateBookName={this.updateBookName}
-                updateBookDescription={this.updateBookDescription}
-                updateBookStatus={this.updateBookStatus}
-                addbook={this.addbook}
-              />
-
+                <BookFormModal
+                  show={this.state.show}
+                  handleClose={this.handleClose}
+                  updateBookName={this.updateBookName}
+                  updateBookDescription={this.updateBookDescription}
+                  updateBookStatus={this.updateBookStatus}
+                  addbook={this.addbook}
+                />
+              </>
             </Jumbotron>
             <BestBooks
               books={this.state.books}
               delBook={this.delBook}
-              updateBook={this.state.showUpdateForm}
+            />
+            <UpdateBookForm
+              show={this.state.showUpdateForm}
+              handleClose={this.handleClose}
+              books={this.state.books}
+              bookName={this.state.bookName}
+              bookDescription={this.state.bookDescription}
+              bookStatus={this.state.bookStatus}
+              updatebookname={this.updateBookName}
+              updateBookDescription={this.updateBookDescription}
+              updateBookStatus={this.updateBookStatus}
+              updateBook={this.updateBook}
 
             />
-            <>{this.state.showUpdateForm &&
-              <UpdateBookForm
-                show={this.state.showUpdateForm}
-                handleClose={this.handleClose}
-                books={this.state.books}
-                bookName={this.state.bookName}
-                bookDescription={this.state.bookDescription}
-                bookStatus={this.state.bookStatus}
-                updatebookname={this.updateBookName}
-                updateBookDescription={this.updateBookDescription}
-                updateBookStatus={this.updateBookStatus}
-                updateBook={this.updateBook}
-                addbook={this.addbook}
-              />
-            }
-            </>
           </>
         )}
       </>
