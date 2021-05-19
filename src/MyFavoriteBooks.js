@@ -148,11 +148,14 @@ class MyFavoriteBooks extends React.Component {
             <BestBooks
               books={this.state.books}
               delBook={this.delBook}
+              updateBook={this.state.showUpdateForm}
 
             />
-            <>{this.showUpdateForm &&
+            <>{this.state.showUpdateForm &&
               <UpdateBookForm
-
+                show={this.state.showUpdateForm}
+                handleClose={this.handleClose}
+                books={this.state.books}
                 bookName={this.state.bookName}
                 bookDescription={this.state.bookDescription}
                 bookStatus={this.state.bookStatus}
@@ -160,6 +163,7 @@ class MyFavoriteBooks extends React.Component {
                 updateBookDescription={this.updateBookDescription}
                 updateBookStatus={this.updateBookStatus}
                 updateBook={this.updateBook}
+                addbook={this.addbook}
               />
             }
             </>

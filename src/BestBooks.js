@@ -39,7 +39,7 @@ class BestBooks extends Component {
                     onClick={() => this.props.delBook(idx)} > Remove Book ({book.name})</Button>
                   <Button
                     variant="info"
-                    onClick={() => this.props.updateBook(idx)} > Update Book ({book.name})</Button>
+                    onClick={() => this.props.showUpdateForm(idx)} > Update Book ({book.name})</Button>
                 </Jumbotron>
               </>
             )}
