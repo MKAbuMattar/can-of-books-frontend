@@ -8,6 +8,7 @@ class BestBooks extends Component {
     super(props);
     this.state = {
       loading: true,
+      show: false,
     };
   }
 
@@ -36,7 +37,12 @@ class BestBooks extends Component {
                   <p>Book status: {book.status}</p>
                   <Button
                     variant="danger"
-                    onClick={() => this.props.delBook(idx)} > Remove Book ({book.name})</Button>
+                    onClick={() => this.props.delBook(idx)}
+                  > Remove Book ({book.name})</Button>
+                  <Button
+                    variant="info"
+                    onClick={() => this.props.handleShowUpdae(idx)}
+                  >Edit Book ({book.name})</Button>
                 </Jumbotron>
               </>
             )}

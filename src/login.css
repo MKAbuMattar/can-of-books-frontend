@@ -12,11 +12,16 @@
   width: 25rem;
 }
 
-.btn-primary {
+.btn {
   border: 0;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  margin-right: 0.5rem;
 }
 
 .btn:focus {
   outline: 0;
+}
+
+.btn-primary {
+  border: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
