@@ -3,6 +3,7 @@ import axios from 'axios';
 import { withAuth0 } from '@auth0/auth0-react';
 import BestBooks from './BestBooks';
 import BookFormModal from './BookFormModal';
+import UpdateBookFormModal from './UpdateBookFormModal';
 import { Jumbotron, Button } from 'react-bootstrap';
 import './myFavoriteBooks.css';
 
@@ -13,11 +14,13 @@ class MyFavoriteBooks extends React.Component {
     this.state = {
       loading: true,
       show: false,
+      showUpdate: false,
       bookName: '',
       bookDescription: '',
       bookStatus: '',
       books: [],
       email: '',
+      idx: 0,
     };
   }
 
@@ -48,6 +51,7 @@ class MyFavoriteBooks extends React.Component {
 
   handleClose = () => this.setState({ show: false, });
 
+
   updateBookName = (event) => this.setState({ bookName: event.target.value });
   updateBookDescription = (event) => this.setState({ bookDescription: event.target.value });
   updateBookStatus = (event) => this.setState({ bookStatus: event.target.value });
@@ -55,10 +59,13 @@ class MyFavoriteBooks extends React.Component {
   addbook = async (event) => {
     event.preventDefault();
 
+    const { user } = this.props.auth0;
+
     const body = {
+      email: user.email,
       name: this.state.bookName,
       description: this.state.bookDescription,
-      status: this.state.bookStatus
+      statu: this.state.bookStatus
     };
 
     const newBook = await axios.post(`${process.env.REACT_APP_API_URL}/books`, body);
@@ -83,6 +90,45 @@ class MyFavoriteBooks extends React.Component {
     };
 
     await axios.delete(`${process.env.REACT_APP_API_URL}/books/${index}`, { params: params });
+  }
+
+  handleShowUpdae = async (num) => {
+
+    const book = this.state.books.filter((value, index) => {
+      return num === index;
+    });
+
+    this.setState({
+      showUpdate: true,
+      bookName: book[0].name,
+      bookDescription: book[0].description,
+      bookStatus: book[0].status,
+      idx: num,
+    });
+
+  };
+
+  handleCloseUpdae = () => this.setState({ showUpdate: false, });
+
+  updateBook = async (event) => {
+
+    event.preventDefault();
+
+    const { user } = this.props.auth0;
+
+    const reqBody = {
+      email: user.email,
+      name: this.state.bookName,
+      description: this.state.bookDescription,
+      statu: this.state.bookStatus
+    };
+
+    const books = await axios.put(`${process.env.REACT_APP_API_URL}/books/${this.state.index}`, reqBody);
+
+    this.setState({
+      books: books.data
+    });
+
   }
 
   render() {
@@ -114,7 +160,22 @@ class MyFavoriteBooks extends React.Component {
             <BestBooks
               books={this.state.books}
               delBook={this.delBook}
+              handleShowUpdae={this.handleShowUpdae}
             />
+            {this.state.bookName &&
+              <UpdateBookFormModal
+                showUpdae={this.state.showUpdate}
+                handleCloseUpdae={this.handleCloseUpdae}
+                index={this.state.idx}
+                bookName={this.bookName}
+                bookDescription={this.bookDescription}
+                bookStatus={this.bookStatus}
+                updateBookName={this.updateBookName}
+                updateBookDescription={this.updateBookDescription}
+                updateBookStatus={this.updateBookStatus}
+                updateBook={this.updateBook}
+              />
+            }
           </>
         )}
       </>

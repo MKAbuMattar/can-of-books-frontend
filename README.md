@@ -135,6 +135,25 @@ Actual time needed to complete: ~1:45h
 
 ***
 
+***
+
+lab work 14
+
+Name of feature: login and logout using `Auth0`, if the user try to open any page not allow to open using URL it'll redirect to 404 page,
+i added a new component named 'BestBooks.js' and that one is responsable to display the favourite books that user select.
+new you can add/delete new books, add update books
+
+
+Estimate of time needed to complete: 2h
+
+Start time: 09:30 PM
+
+Finish time: 11:30 PM
+
+Actual time needed to complete: ~2h
+
+***
+
 
 A link to the deployed version of your latest code.
 
@@ -154,4 +173,4 @@ nothing
 
 How long you spent working on this assignment.
 
-~7:45h
+~9:45h
